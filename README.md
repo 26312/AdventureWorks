@@ -13,10 +13,10 @@ Step:1 Create Service Level Aplication using "Microsoft Entra ID", which will al
 Connect to Azure Data Lake Storage Gen2 and Blob Storage:
 https://learn.microsoft.com/en-us/azure/databricks/connect/storage/azure-storage
 
-You can use the following format to set the cluster Spark configuration in your Notebook.
-Use spark.conf.set in notebooks, as shown in the following example:
+#### You can use the following format to set the cluster Spark configuration in your Notebook.
+#### Use spark.conf.set in notebooks, as shown in the following example:
 
-// Not Required mostly
+
 service_credential = dbutils.secrets.get(scope=`"<secret-scope>"`,key=`"<service-credential-key>"`)
 
 spark.conf.set("fs.azure.account.auth.type.`<storage-account>`.dfs.core.windows.net", "OAuth")
