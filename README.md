@@ -10,7 +10,8 @@ https://www.kaggle.com/datasets/ukveteran/adventure-works/data
 Step:1 Create Service Level Aplication using "Microsoft Entra ID", which will allow DataBricks to access Azure Data Lake
 
 ## Azure service principal
-@https://learn.microsoft.com/en-us/azure/databricks/connect/storage/azure-storage
+Connect to Azure Data Lake Storage Gen2 and Blob Storage:
+https://learn.microsoft.com/en-us/azure/databricks/connect/storage/azure-storage
 
 You can use the following format to set the cluster Spark configuration in your Notebook.
 Use spark.conf.set in notebooks, as shown in the following example:
