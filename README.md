@@ -17,10 +17,14 @@ You can use the following format to set the cluster Spark configuration in your 
 Use spark.conf.set in notebooks, as shown in the following example:
 
 // Not Required mostly
-service_credential = dbutils.secrets.get(scope="<secret-scope>",key="<service-credential-key>") 
+service_credential = dbutils.secrets.get(scope=`"<secret-scope>"`,key=`"<service-credential-key>"`)
 
-spark.conf.set("fs.azure.account.auth.type.<storage-account>.dfs.core.windows.net", "OAuth")
-spark.conf.set("fs.azure.account.oauth.provider.type.<storage-account>.dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
-spark.conf.set("fs.azure.account.oauth2.client.id.<storage-account>.dfs.core.windows.net", "<application-id>")
-spark.conf.set("fs.azure.account.oauth2.client.secret.<storage-account>.dfs.core.windows.net", service_credential)
-spark.conf.set("fs.azure.account.oauth2.client.endpoint.<storage-account>.dfs.core.windows.net", "https://login.microsoftonline.com/<directory-id>/oauth2/token")
+spark.conf.set("fs.azure.account.auth.type.`<storage-account>`.dfs.core.windows.net", "OAuth")
+
+spark.conf.set("fs.azure.account.oauth.provider.type.`<storage-account>`.dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
+
+spark.conf.set("fs.azure.account.oauth2.client.id.`<storage-account>`.dfs.core.windows.net", `"<application-id>"`)
+
+spark.conf.set("fs.azure.account.oauth2.client.secret.`<storage-account>`.dfs.core.windows.net", `service_credential`)
+
+spark.conf.set("fs.azure.account.oauth2.client.endpoint.`<storage-account>`.dfs.core.windows.net", "https://login.microsoftonline.com/<directory-id>/oauth2/token")
